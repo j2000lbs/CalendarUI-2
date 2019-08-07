@@ -16,6 +16,15 @@ class RootViewController: UIViewController {
 	@IBOutlet weak var previousMonthButton: UIButton!
 	@IBOutlet weak var monthYearNameLabel: UILabel!
 	
+	// Day label outlets
+	@IBOutlet weak var sundayLabel: UILabel!
+	@IBOutlet weak var mondayLabel: UILabel!
+	@IBOutlet weak var tuesdayLabel: UILabel!
+	@IBOutlet weak var wednesdayLabel: UILabel!
+	@IBOutlet weak var thursdayLabel: UILabel!
+	@IBOutlet weak var fridayLabel: UILabel!
+	@IBOutlet weak var saturdayLabel: UILabel!
+	
 	
 	
 
@@ -60,6 +69,12 @@ class RootViewController: UIViewController {
 		
 		previousMonthButton.setTitleColor(Style.previousMonthButtonColor, for: .normal)
 		previousMonthButton.setTitleColor(UIColor.lightGray, for: .disabled)
+		
+		let dayLabelOutlets = [sundayLabel, mondayLabel, tuesdayLabel, wednesdayLabel,
+							   thursdayLabel, fridayLabel, saturdayLabel]
+		for label in dayLabelOutlets {
+			label?.textColor = Style.dayNameLabelColor
+		}
 	}
 
 

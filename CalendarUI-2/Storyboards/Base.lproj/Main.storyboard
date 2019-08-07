@@ -21,9 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUf-pS-0V0" userLabel="Month View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-Lj-vYp" userLabel="Calendar Collection View" customClass="CalendarCollectionViewController">
-                                        <rect key="frame" x="0.0" y="169" width="414" height="470"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-Lj-vYp" userLabel="Calendar Collection View" customClass="CalendarCollectionViewController">
+                                        <rect key="frame" x="0.0" y="73" width="414" height="735"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="159-k8-Uwl">
                                             <size key="itemSize" width="50" height="40"/>
@@ -74,7 +73,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8n-7f-cMp" userLabel="monthYearNameLabel">
                                                 <rect key="frame" x="50" y="0.0" width="150" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="2yY-ID-xss"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="2yY-ID-xss"/>
                                                     <constraint firstAttribute="height" constant="35" id="8po-0G-NCG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -148,11 +147,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mT3-Lj-vYp" secondAttribute="bottom" id="5m8-8X-Yob"/>
                                     <constraint firstAttribute="trailing" secondItem="7fr-qt-i3r" secondAttribute="trailing" constant="10" id="8qG-it-a1X"/>
                                     <constraint firstItem="7fr-qt-i3r" firstAttribute="top" secondItem="kho-lO-amQ" secondAttribute="bottom" id="Hqw-iH-2Xh"/>
                                     <constraint firstItem="7fr-qt-i3r" firstAttribute="leading" secondItem="CUf-pS-0V0" secondAttribute="leading" constant="10" id="LUw-ED-6i4"/>
+                                    <constraint firstAttribute="trailing" secondItem="mT3-Lj-vYp" secondAttribute="trailing" id="Lg9-b3-RYQ"/>
                                     <constraint firstItem="kho-lO-amQ" firstAttribute="centerX" secondItem="CUf-pS-0V0" secondAttribute="centerX" id="Pip-ZB-F05"/>
                                     <constraint firstItem="kho-lO-amQ" firstAttribute="top" secondItem="CUf-pS-0V0" secondAttribute="top" constant="8" id="cZW-D4-E9A"/>
+                                    <constraint firstItem="mT3-Lj-vYp" firstAttribute="leading" secondItem="CUf-pS-0V0" secondAttribute="leading" id="sgy-fl-qEO"/>
+                                    <constraint firstItem="mT3-Lj-vYp" firstAttribute="top" secondItem="7fr-qt-i3r" secondAttribute="bottom" id="x7n-J7-0G1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -174,10 +177,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendarCollectionView" destination="mT3-Lj-vYp" id="Be5-Tq-X6C"/>
+                        <outlet property="fridayLabel" destination="Moj-To-HEE" id="RTq-kg-EvS"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="LQN-nc-Tgb"/>
+                        <outlet property="mondayLabel" destination="V8d-Xo-LU4" id="YIc-PV-P6V"/>
                         <outlet property="monthYearNameLabel" destination="E8n-7f-cMp" id="Kcz-KE-TMC"/>
                         <outlet property="nextMonthButton" destination="DoO-9Z-vRc" id="usM-xM-avT"/>
                         <outlet property="previousMonthButton" destination="Ber-Q1-6yc" id="UZL-Ei-LMZ"/>
+                        <outlet property="saturdayLabel" destination="gMe-JN-Y9o" id="KNL-tZ-yoR"/>
+                        <outlet property="sundayLabel" destination="X4b-8O-WXN" id="Oh3-cv-fDn"/>
+                        <outlet property="thursdayLabel" destination="M7d-e0-Nva" id="S4h-8n-AKE"/>
+                        <outlet property="tuesdayLabel" destination="dB3-xQ-Wyb" id="pdt-CM-MKg"/>
+                        <outlet property="wednesdayLabel" destination="H6K-l6-4L7" id="5aW-Zy-2cr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
