@@ -10,10 +10,12 @@ import Foundation
 
 
 // MARK: - String extension
+
+// Get date from string
 extension String {
 	static var dateFormatter: DateFormatter = {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "yyyy-MM-dd"
+		formatter.dateFormat = "MM-dd-yyyy"
 		return formatter
 	}()
 	

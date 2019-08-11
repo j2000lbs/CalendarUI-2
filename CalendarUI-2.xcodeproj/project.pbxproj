@@ -15,14 +15,13 @@
 		33D82EB822F74D0400DC9196 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EB622F74D0400DC9196 /* StringExtensions.swift */; };
 		33D82EB922F74D0400DC9196 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EB722F74D0400DC9196 /* DateExtension.swift */; };
 		33D82EBC22F74DA900DC9196 /* LightThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EBB22F74DA900DC9196 /* LightThemes.swift */; };
-		33D82EC122F750A700DC9196 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC022F750A700DC9196 /* CalendarView.swift */; };
 		33D82EC322F750D000DC9196 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC222F750D000DC9196 /* Styles.swift */; };
 		33D82EC522F7510C00DC9196 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC422F7510C00DC9196 /* Colors.swift */; };
-		33D82EC722F7536000DC9196 /* MonthViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */; };
+		33D82EC722F7536000DC9196 /* MonthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC622F7536000DC9196 /* MonthDelegate.swift */; };
 		33D82ECC22F7696C00DC9196 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ECB22F7696C00DC9196 /* CalendarViewCell.swift */; };
-		33D82ED122FA269D00DC9196 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED022FA269D00DC9196 /* Calendar.swift */; };
+		33D82ED122FA269D00DC9196 /* Calendar-Not used yet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */; };
 		33D82ED322FA2DC000DC9196 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED222FA2DC000DC9196 /* Month.swift */; };
-		33D82ED522FA337D00DC9196 /* DaysOfTheWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED422FA337D00DC9196 /* DaysOfTheWeek.swift */; };
+		33D82ED722FB882E00DC9196 /* LightThemeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +35,13 @@
 		33D82EB622F74D0400DC9196 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		33D82EB722F74D0400DC9196 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		33D82EBB22F74DA900DC9196 /* LightThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemes.swift; sourceTree = "<group>"; };
-		33D82EC022F750A700DC9196 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		33D82EC222F750D000DC9196 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		33D82EC422F7510C00DC9196 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewDelegate.swift; sourceTree = "<group>"; };
+		33D82EC622F7536000DC9196 /* MonthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDelegate.swift; sourceTree = "<group>"; };
 		33D82ECB22F7696C00DC9196 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
-		33D82ED022FA269D00DC9196 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar-Not used yet.swift"; sourceTree = "<group>"; };
 		33D82ED222FA2DC000DC9196 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
-		33D82ED422FA337D00DC9196 /* DaysOfTheWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfTheWeek.swift; sourceTree = "<group>"; };
+		33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemeHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +74,11 @@
 		33D82EA122F74CC300DC9196 /* CalendarUI-2 */ = {
 			isa = PBXGroup;
 			children = (
-				33D82ECF22FA268700DC9196 /* Model */,
 				33D82EA222F74CC300DC9196 /* AppDelegate.swift */,
-				33D82EBD22F74DD400DC9196 /* Controllers */,
 				33D82EB422F74CEB00DC9196 /* Protocols */,
 				33D82EB522F74D0400DC9196 /* Extensions */,
-				33D82EBF22F7508700DC9196 /* Views */,
+				33D82ECF22FA268700DC9196 /* Model */,
+				33D82EBD22F74DD400DC9196 /* Controllers */,
 				33D82ECA22F7694100DC9196 /* Cells */,
 				33D82EBE22F74E4B00DC9196 /* Storyboards */,
 				33D82EBA22F74D8900DC9196 /* Supplemental */,
@@ -94,7 +91,7 @@
 		33D82EB422F74CEB00DC9196 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */,
+				33D82EC622F7536000DC9196 /* MonthDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -111,7 +108,7 @@
 		33D82EBA22F74D8900DC9196 /* Supplemental */ = {
 			isa = PBXGroup;
 			children = (
-				33D82EBB22F74DA900DC9196 /* LightThemes.swift */,
+				33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */,
 				33D82EC222F750D000DC9196 /* Styles.swift */,
 				33D82EC422F7510C00DC9196 /* Colors.swift */,
 			);
@@ -135,14 +132,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		33D82EBF22F7508700DC9196 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				33D82EC022F750A700DC9196 /* CalendarView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		33D82ECA22F7694100DC9196 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +143,19 @@
 		33D82ECF22FA268700DC9196 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33D82ED022FA269D00DC9196 /* Calendar.swift */,
-				33D82ED222FA2DC000DC9196 /* Month.swift */,
-				33D82ED422FA337D00DC9196 /* DaysOfTheWeek.swift */,
+				33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */,
+				33D82EBB22F74DA900DC9196 /* LightThemes.swift */,
+				33D82EDA2300AD2A00DC9196 /* View */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		33D82EDA2300AD2A00DC9196 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33D82ED222FA2DC000DC9196 /* Month.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,15 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D82ED122FA269D00DC9196 /* Calendar.swift in Sources */,
+				33D82ED122FA269D00DC9196 /* Calendar-Not used yet.swift in Sources */,
 				33D82EB822F74D0400DC9196 /* StringExtensions.swift in Sources */,
 				33D82EC522F7510C00DC9196 /* Colors.swift in Sources */,
-				33D82EC722F7536000DC9196 /* MonthViewDelegate.swift in Sources */,
-				33D82ED522FA337D00DC9196 /* DaysOfTheWeek.swift in Sources */,
+				33D82EC722F7536000DC9196 /* MonthDelegate.swift in Sources */,
+				33D82ED722FB882E00DC9196 /* LightThemeHelpers.swift in Sources */,
 				33D82EC322F750D000DC9196 /* Styles.swift in Sources */,
 				33D82ECC22F7696C00DC9196 /* CalendarViewCell.swift in Sources */,
 				33D82EB922F74D0400DC9196 /* DateExtension.swift in Sources */,
-				33D82EC122F750A700DC9196 /* CalendarView.swift in Sources */,
 				33D82ED322FA2DC000DC9196 /* Month.swift in Sources */,
 				33D82EA522F74CC300DC9196 /* RootViewController.swift in Sources */,
 				33D82EA322F74CC300DC9196 /* AppDelegate.swift in Sources */,
@@ -393,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWZ52X9R5X;
 				INFOPLIST_FILE = "CalendarUI-2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWZ52X9R5X;
 				INFOPLIST_FILE = "CalendarUI-2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
