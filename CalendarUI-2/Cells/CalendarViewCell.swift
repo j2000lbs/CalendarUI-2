@@ -10,8 +10,15 @@ import UIKit
 
 class CalendarViewCell: UICollectionViewCell {
 	
-	@IBOutlet weak var dateCell: UILabel!
-	
+	let dateLabel: UILabel = {
+		let label = UILabel()
+		label.text = "00"
+		label.textAlignment = .center
+		label.font = UIFont.systemFont(ofSize: 16)
+		label.textColor = Colors.nightSky
+		label.translatesAutoresizingMaskIntoConstraints = false
+		return label
+	}()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -20,11 +27,21 @@ class CalendarViewCell: UICollectionViewCell {
 		layer.cornerRadius = 5
 		layer.masksToBounds = true
 		
-		dateCell.textColor = Colors.skyBlue
+		setupViews()
 	}
-	
 	
 	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+		fatalError("init(coder:) has not been implemented")
 	}
+	
+	
+	func setupViews() {
+		addSubview(dateLabel)
+		dateLabel.topAnchor.constraint(equalTo: topAnchor).isActive=true
+		dateLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive=true
+		dateLabel.rightAnchor.constraint(equalTo: rightAnchor).isActive=true
+		dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive=true
+	}
+	
+	
 }

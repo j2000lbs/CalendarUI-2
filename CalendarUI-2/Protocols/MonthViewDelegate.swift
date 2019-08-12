@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol MonthDelegate: class {
+protocol MonthViewDelegate: class {
 	func didChange(month monthIndex: Int, year:Int)
 }

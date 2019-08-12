@@ -15,10 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
-		if let navVC = window?.rootViewController as? UINavigationController,
-			let initialVC = navVC.viewControllers[0] as? RootViewController {
-			
-			initialVC.month = Month()
+		self.window = UIWindow(frame: UIScreen.main.bounds)
+		if let window = self.window {
+			window.backgroundColor = UIColor.white
+			let nav = UINavigationController()
+			let mainView = RootViewController()
+			nav.viewControllers = [mainView]
+			window.rootViewController = nav
+			window.makeKeyAndVisible()
 		}
 		
 		return true

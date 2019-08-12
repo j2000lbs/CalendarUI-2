@@ -8,9 +8,6 @@
 
 import Foundation
 
-
-// MARK: - String extension
-
 // Get date from string
 extension String {
 	static var dateFormatter: DateFormatter = {

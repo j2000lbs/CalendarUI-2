@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-// MARK: - Date extension
 extension Date {
 	var dayOfWeek: Int {
 		return Calendar.current.component(.weekday, from: self)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		33D82EA322F74CC300DC9196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EA222F74CC300DC9196 /* AppDelegate.swift */; };
 		33D82EA522F74CC300DC9196 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EA422F74CC300DC9196 /* RootViewController.swift */; };
-		33D82EA822F74CC300DC9196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D82EA622F74CC300DC9196 /* Main.storyboard */; };
 		33D82EAA22F74CC400DC9196 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D82EA922F74CC400DC9196 /* Assets.xcassets */; };
 		33D82EAD22F74CC400DC9196 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D82EAB22F74CC400DC9196 /* LaunchScreen.storyboard */; };
 		33D82EB822F74D0400DC9196 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EB622F74D0400DC9196 /* StringExtensions.swift */; };
@@ -17,18 +16,19 @@
 		33D82EBC22F74DA900DC9196 /* LightThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EBB22F74DA900DC9196 /* LightThemes.swift */; };
 		33D82EC322F750D000DC9196 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC222F750D000DC9196 /* Styles.swift */; };
 		33D82EC522F7510C00DC9196 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC422F7510C00DC9196 /* Colors.swift */; };
-		33D82EC722F7536000DC9196 /* MonthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC622F7536000DC9196 /* MonthDelegate.swift */; };
+		33D82EC722F7536000DC9196 /* MonthViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */; };
 		33D82ECC22F7696C00DC9196 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ECB22F7696C00DC9196 /* CalendarViewCell.swift */; };
 		33D82ED122FA269D00DC9196 /* Calendar-Not used yet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */; };
-		33D82ED322FA2DC000DC9196 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED222FA2DC000DC9196 /* Month.swift */; };
-		33D82ED722FB882E00DC9196 /* LightThemeHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */; };
+		33D82ED322FA2DC000DC9196 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82ED222FA2DC000DC9196 /* MonthView.swift */; };
+		33D82EDC2300E6DD00DC9196 /* DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EDB2300E6DD00DC9196 /* DaysView.swift */; };
+		33D82EE02300E91600DC9196 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EDF2300E91600DC9196 /* CalendarView.swift */; };
+		33D82EE32300F0AE00DC9196 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D82EE22300F0AE00DC9196 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33D82E9F22F74CC300DC9196 /* CalendarUI-2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CalendarUI-2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D82EA222F74CC300DC9196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D82EA422F74CC300DC9196 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		33D82EA722F74CC300DC9196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33D82EA922F74CC400DC9196 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D82EAC22F74CC400DC9196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33D82EAE22F74CC400DC9196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,11 +37,13 @@
 		33D82EBB22F74DA900DC9196 /* LightThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemes.swift; sourceTree = "<group>"; };
 		33D82EC222F750D000DC9196 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		33D82EC422F7510C00DC9196 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		33D82EC622F7536000DC9196 /* MonthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDelegate.swift; sourceTree = "<group>"; };
+		33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewDelegate.swift; sourceTree = "<group>"; };
 		33D82ECB22F7696C00DC9196 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
 		33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar-Not used yet.swift"; sourceTree = "<group>"; };
-		33D82ED222FA2DC000DC9196 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
-		33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightThemeHelpers.swift; sourceTree = "<group>"; };
+		33D82ED222FA2DC000DC9196 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		33D82EDB2300E6DD00DC9196 /* DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysView.swift; sourceTree = "<group>"; };
+		33D82EDF2300E91600DC9196 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		33D82EE22300F0AE00DC9196 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				33D82EA222F74CC300DC9196 /* AppDelegate.swift */,
+				33D82EBD22F74DD400DC9196 /* Controllers */,
 				33D82EB422F74CEB00DC9196 /* Protocols */,
 				33D82EB522F74D0400DC9196 /* Extensions */,
 				33D82ECF22FA268700DC9196 /* Model */,
-				33D82EBD22F74DD400DC9196 /* Controllers */,
+				33D82EDA2300AD2A00DC9196 /* Views */,
 				33D82ECA22F7694100DC9196 /* Cells */,
 				33D82EBE22F74E4B00DC9196 /* Storyboards */,
+				33D82EE12300F09700DC9196 /* Helpers */,
 				33D82EBA22F74D8900DC9196 /* Supplemental */,
 				33D82EA922F74CC400DC9196 /* Assets.xcassets */,
 				33D82EAE22F74CC400DC9196 /* Info.plist */,
@@ -91,7 +95,7 @@
 		33D82EB422F74CEB00DC9196 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				33D82EC622F7536000DC9196 /* MonthDelegate.swift */,
+				33D82EC622F7536000DC9196 /* MonthViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -108,7 +112,6 @@
 		33D82EBA22F74D8900DC9196 /* Supplemental */ = {
 			isa = PBXGroup;
 			children = (
-				33D82ED622FB882E00DC9196 /* LightThemeHelpers.swift */,
 				33D82EC222F750D000DC9196 /* Styles.swift */,
 				33D82EC422F7510C00DC9196 /* Colors.swift */,
 			);
@@ -126,7 +129,6 @@
 		33D82EBE22F74E4B00DC9196 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				33D82EA622F74CC300DC9196 /* Main.storyboard */,
 				33D82EAB22F74CC400DC9196 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -145,17 +147,26 @@
 			children = (
 				33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */,
 				33D82EBB22F74DA900DC9196 /* LightThemes.swift */,
-				33D82EDA2300AD2A00DC9196 /* View */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		33D82EDA2300AD2A00DC9196 /* View */ = {
+		33D82EDA2300AD2A00DC9196 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				33D82ED222FA2DC000DC9196 /* Month.swift */,
+				33D82ED222FA2DC000DC9196 /* MonthView.swift */,
+				33D82EDB2300E6DD00DC9196 /* DaysView.swift */,
+				33D82EDF2300E91600DC9196 /* CalendarView.swift */,
 			);
-			path = View;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33D82EE12300F09700DC9196 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				33D82EE22300F0AE00DC9196 /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +229,6 @@
 			files = (
 				33D82EAD22F74CC400DC9196 /* LaunchScreen.storyboard in Resources */,
 				33D82EAA22F74CC400DC9196 /* Assets.xcassets in Resources */,
-				33D82EA822F74CC300DC9196 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,14 +242,16 @@
 				33D82ED122FA269D00DC9196 /* Calendar-Not used yet.swift in Sources */,
 				33D82EB822F74D0400DC9196 /* StringExtensions.swift in Sources */,
 				33D82EC522F7510C00DC9196 /* Colors.swift in Sources */,
-				33D82EC722F7536000DC9196 /* MonthDelegate.swift in Sources */,
-				33D82ED722FB882E00DC9196 /* LightThemeHelpers.swift in Sources */,
+				33D82EC722F7536000DC9196 /* MonthViewDelegate.swift in Sources */,
 				33D82EC322F750D000DC9196 /* Styles.swift in Sources */,
+				33D82EDC2300E6DD00DC9196 /* DaysView.swift in Sources */,
+				33D82EE02300E91600DC9196 /* CalendarView.swift in Sources */,
 				33D82ECC22F7696C00DC9196 /* CalendarViewCell.swift in Sources */,
 				33D82EB922F74D0400DC9196 /* DateExtension.swift in Sources */,
-				33D82ED322FA2DC000DC9196 /* Month.swift in Sources */,
+				33D82ED322FA2DC000DC9196 /* MonthView.swift in Sources */,
 				33D82EA522F74CC300DC9196 /* RootViewController.swift in Sources */,
 				33D82EA322F74CC300DC9196 /* AppDelegate.swift in Sources */,
+				33D82EE32300F0AE00DC9196 /* Helpers.swift in Sources */,
 				33D82EBC22F74DA900DC9196 /* LightThemes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,14 +259,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		33D82EA622F74CC300DC9196 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				33D82EA722F74CC300DC9196 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		33D82EAB22F74CC400DC9196 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
