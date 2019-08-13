@@ -19,7 +19,6 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	var todaysDate = 0
 	var firstDayOfMonth = 0   //(Sunday-Saturday 1-7)
 	var previouslySelectedCellDate: String?
-	var selectedCell = [IndexPath]()
 	
 	let helpers = Helpers()
 	
@@ -197,7 +196,6 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 		cell?.backgroundColor = Colors.nightSky
 		let cellLabel = cell?.subviews[1] as! UILabel
 		cellLabel.textColor = UIColor.white
-		selectedCell.append(indexPath)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
@@ -206,10 +204,6 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 		cell?.backgroundColor = UIColor.clear
 		let cellLabel = cell?.subviews[1] as! UILabel
 		cellLabel.textColor = Style.activeCellLabelColor
-		if selectedCell.contains(indexPath) {
-			selectedCell.remove(at: selectedCell.firstIndex(of: indexPath)!)
-			cell?.backgroundColor = UIColor.clear
-		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
