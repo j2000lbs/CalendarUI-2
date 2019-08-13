@@ -20,6 +20,17 @@ class CalendarViewCell: UICollectionViewCell {
 		return label
 	}()
 	
+	
+	override var isSelected: Bool {
+		didSet {
+			if self.isSelected {
+				self.backgroundColor = Colors.nightSky
+			} else {
+				self.backgroundColor = UIColor.clear
+			}
+		}
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		

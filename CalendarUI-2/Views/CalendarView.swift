@@ -19,6 +19,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	var todaysDate = 0
 	var firstDayOfMonth = 0   //(Sunday-Saturday 1-7)
 	var previouslySelectedCellDate: String?
+	var selectedCell = [IndexPath]()
 	
 	let helpers = Helpers()
 	
@@ -181,29 +182,34 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 			} else {
 				cell.isUserInteractionEnabled = true
 				cell.dateLabel.textColor = Style.activeCellLabelColor
-				/* The following if-statemet fixes the bug of a selected cell not having the correct background color after scrolling. */
-				if cell.isSelected {
-					cell.backgroundColor = Colors.nightSky
-				}
-				
 			}
 		}
 		return cell
 	}
 	
 	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+	// MARK: Cell Selection Delegates
+	
+	
+	func collectionView(_ collectionView: UICollectionView,
+						didSelectItemAt indexPath: IndexPath) {
 		let cell = collectionView.cellForItem(at: indexPath)
 		cell?.backgroundColor = Colors.nightSky
 		let cellLabel = cell?.subviews[1] as! UILabel
 		cellLabel.textColor = UIColor.white
+		selectedCell.append(indexPath)
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+	func collectionView(_ collectionView: UICollectionView,
+						didDeselectItemAt indexPath: IndexPath) {
 		let cell = collectionView.cellForItem(at: indexPath)
 		cell?.backgroundColor = UIColor.clear
 		let cellLabel = cell?.subviews[1] as! UILabel
 		cellLabel.textColor = Style.activeCellLabelColor
+		if selectedCell.contains(indexPath) {
+			selectedCell.remove(at: selectedCell.firstIndex(of: indexPath)!)
+			cell?.backgroundColor = UIColor.clear
+		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
