@@ -187,30 +187,10 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 				}
 				
 			}
-/*  Trying to fix the bug of a selected cell losing the selection when scrolled off sreen
-			if previouslySelectedCellDate == "\(calculateDate)" {
-				cell.isSelected = true
-			}
-*/
 		}
 		return cell
 	}
 	
-/*  Trying to fix the bug of a selected cell losing the selection when scrolled off sreen
-	
-	func collectionView(_ collectionView: UICollectionView,
-						didEndDisplaying cell: UICollectionViewCell,
-						forItemAt indexPath: IndexPath) {
-		
-	// MARK: - Enter code here
-		if let calendarCell = collectionView.cellForItem(at: indexPath){
-			let dateLabel = (cell.subviews[1] as! UILabel).text
-			if calendarCell.isSelected {
-				previouslySelectedCellDate = dateLabel
-			}
-		}
-	}
-*/
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let cell = collectionView.cellForItem(at: indexPath)
