@@ -78,14 +78,14 @@
 			children = (
 				33D82EA222F74CC300DC9196 /* AppDelegate.swift */,
 				33D82EBD22F74DD400DC9196 /* Controllers */,
-				33D82EB422F74CEB00DC9196 /* Protocols */,
-				33D82EB522F74D0400DC9196 /* Extensions */,
 				33D82ECF22FA268700DC9196 /* Model */,
 				33D82EDA2300AD2A00DC9196 /* Views */,
 				33D82ECA22F7694100DC9196 /* Cells */,
-				33D82EBE22F74E4B00DC9196 /* Storyboards */,
+				33D82EB422F74CEB00DC9196 /* Protocols */,
+				33D82EB522F74D0400DC9196 /* Extensions */,
 				33D82EE12300F09700DC9196 /* Helpers */,
 				33D82EBA22F74D8900DC9196 /* Supplemental */,
+				33D82EBE22F74E4B00DC9196 /* Storyboards */,
 				33D82EA922F74CC400DC9196 /* Assets.xcassets */,
 				33D82EAE22F74CC400DC9196 /* Info.plist */,
 			);
@@ -113,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				33D82EC222F750D000DC9196 /* Styles.swift */,
+				33D82EBB22F74DA900DC9196 /* LightThemes.swift */,
 				33D82EC422F7510C00DC9196 /* Colors.swift */,
 			);
 			path = Supplemental;
@@ -146,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				33D82ED022FA269D00DC9196 /* Calendar-Not used yet.swift */,
-				33D82EBB22F74DA900DC9196 /* LightThemes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

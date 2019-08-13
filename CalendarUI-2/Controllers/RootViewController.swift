@@ -13,6 +13,9 @@ class RootViewController: UIViewController {
 	var theme = LightThemes.dark
 	var dayLabelOutlets: [UILabel] = []
 	
+	var compactHeightContraint: NSLayoutConstraint!
+	var regularHeightContraint: NSLayoutConstraint!
+	
 	let calenderView: CalenderView = {
 		let view = CalenderView(theme: LightThemes.dark)
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -31,20 +34,28 @@ class RootViewController: UIViewController {
 			label.textColor = Style.dayNameLabelColor
 		}
 			
-			view.addSubview(calenderView)
-			calenderView.topAnchor.constraint(equalTo: view.topAnchor,
-											  constant: 10).isActive = true
-			calenderView.rightAnchor.constraint(equalTo: view.rightAnchor,
-												constant: -12).isActive = true
-			calenderView.leftAnchor.constraint(equalTo: view.leftAnchor,
-											   constant: 12).isActive = true
-			calenderView.heightAnchor.constraint(equalToConstant: 365).isActive = true
-			
-			let rightBarButton = UIBarButtonItem(title: "Light",
-												style: .plain,
-												target: self,
-												action: #selector(rightBarButtonAction))
-			self.navigationItem.rightBarButtonItem = rightBarButton
+		view.addSubview(calenderView)
+		calenderView.topAnchor.constraint(equalTo: view.topAnchor,
+										  constant: 10).isActive = true
+		calenderView.rightAnchor.constraint(equalTo: view.rightAnchor,
+											constant: -12).isActive = true
+		calenderView.leftAnchor.constraint(equalTo: view.leftAnchor,
+										   constant: 12).isActive = true
+		
+		/* the following if-else statement ensures the correct height is set for different devices. */
+		if traitCollection.horizontalSizeClass == .regular &&
+			traitCollection.verticalSizeClass == .regular {		// for iPad
+			calenderView.heightAnchor.constraint(equalToConstant: 630).isActive = true
+		} else {			// for iPhone
+			calenderView.heightAnchor.constraint(equalToConstant: 330).isActive = true
+		}
+		// constant was 365 - now 330 for iPhone 8, 630 for iPad
+		
+		let rightBarButton = UIBarButtonItem(title: "Light",
+											style: .plain,
+											target: self,
+											action: #selector(rightBarButtonAction))
+		self.navigationItem.rightBarButtonItem = rightBarButton
 		
 	}
 	

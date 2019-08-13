@@ -18,6 +18,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	var presentYear = 0
 	var todaysDate = 0
 	var firstDayOfMonth = 0   //(Sunday-Saturday 1-7)
+	var previouslySelectedCellDate: String?
 	
 	let helpers = Helpers()
 	
@@ -42,6 +43,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 		calendarCollectionView.allowsMultipleSelection = false
 		return calendarCollectionView
 	}()
+	
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -155,7 +157,8 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	
 	
 	// MARK: - Delegate and Data Source methods
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	func collectionView(_ collectionView: UICollectionView,
+						numberOfItemsInSection section: Int) -> Int {
 		return numOfDaysInMonth[currentMonthIndex - 1] + firstDayOfMonth - 1
 	}
 	
@@ -163,7 +166,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 						cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell",
-													  for: indexPath) as! CalendarViewCell
+												for: indexPath) as! CalendarViewCell
 		cell.backgroundColor = UIColor.clear
 		if indexPath.item <= firstDayOfMonth - 2 {
 			cell.isHidden = true
@@ -178,10 +181,36 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 			} else {
 				cell.isUserInteractionEnabled = true
 				cell.dateLabel.textColor = Style.activeCellLabelColor
+				/* The following if-statemet fixes the bug of a selected cell not having the correct background color after scrolling. */
+				if cell.isSelected {
+					cell.backgroundColor = Colors.nightSky
+				}
+				
 			}
+/*  Trying to fix the bug of a selected cell losing the selection when scrolled off sreen
+			if previouslySelectedCellDate == "\(calculateDate)" {
+				cell.isSelected = true
+			}
+*/
 		}
 		return cell
 	}
+	
+/*  Trying to fix the bug of a selected cell losing the selection when scrolled off sreen
+	
+	func collectionView(_ collectionView: UICollectionView,
+						didEndDisplaying cell: UICollectionViewCell,
+						forItemAt indexPath: IndexPath) {
+		
+	// MARK: - Enter code here
+		if let calendarCell = collectionView.cellForItem(at: indexPath){
+			let dateLabel = (cell.subviews[1] as! UILabel).text
+			if calendarCell.isSelected {
+				previouslySelectedCellDate = dateLabel
+			}
+		}
+	}
+*/
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let cell = collectionView.cellForItem(at: indexPath)
@@ -202,8 +231,8 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
 		
 		let width = collectionView.frame.width / 7 - 8
-		let height: CGFloat = 40
-		return CGSize(width: width, height: height)
+//*******	let height: CGFloat = collectionView.frame.height / 5	// was: = 40
+		return CGSize(width: width, height: width)	// was: height: height
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -213,4 +242,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 		return 8.0
 	}
+	
+	
+	
 }
