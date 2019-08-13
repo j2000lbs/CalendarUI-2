@@ -20,7 +20,8 @@ class CalendarViewCell: UICollectionViewCell {
 		return label
 	}()
 	
-	
+	/* The following override variable fixes the bug of a selected cell not having the correct background color after scrolling.
+		This version had a delay when scrolling cell back onto the sceen.  A slight delay, but at times when changing phone orientation to landscape, the selceted view did not show without scrolling back and forth once.
 	override var isSelected: Bool {
 		didSet {
 			if self.isSelected {
@@ -30,6 +31,7 @@ class CalendarViewCell: UICollectionViewCell {
 			}
 		}
 	}
+*/
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)

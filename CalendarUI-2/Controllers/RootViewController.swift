@@ -56,7 +56,6 @@ class RootViewController: UIViewController {
 											target: self,
 											action: #selector(rightBarButtonAction))
 		self.navigationItem.rightBarButtonItem = rightBarButton
-		
 	}
 	
 	

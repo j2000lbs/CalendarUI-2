@@ -102,7 +102,9 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 		calendarCollectionView.dataSource=self
 		calendarCollectionView.register(CalendarViewCell.self,
 								  forCellWithReuseIdentifier: "Cell")
+		
 	}
+	
 	
 	func getFirstDayOfMonth() -> Int {
 		let day =
@@ -181,6 +183,10 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 			} else {
 				cell.isUserInteractionEnabled = true
 				cell.dateLabel.textColor = Style.activeCellLabelColor
+				/* The following if-statemet fixes the bug of a selected cell not having the correct background color after scrolling. */
+				if cell.isSelected {
+					cell.backgroundColor = Colors.nightSky
+				}
 			}
 		}
 		return cell
@@ -189,20 +195,38 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	
 	// MARK: Cell Selection Delegates
 	
+	func collectionView(_ collectionView: UICollectionView,
+						shouldSelectItemAt indexPath: IndexPath) -> Bool {
+		
+		let date = collectionView.cellForItem(at: indexPath)
+		if date?.isSelected ?? false {
+			collectionView.deselectItem(at: indexPath, animated: false)
+			guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
+				else { return false }
+			cell.backgroundColor = UIColor.clear
+		} else {
+			return true
+		}
+		return false
+	}
+	
 	
 	func collectionView(_ collectionView: UICollectionView,
 						didSelectItemAt indexPath: IndexPath) {
-		let cell = collectionView.cellForItem(at: indexPath)
-		cell?.backgroundColor = Colors.nightSky
-		let cellLabel = cell?.subviews[1] as! UILabel
+		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
+			else { return }
+		cell.backgroundColor = Colors.nightSky
+		let cellLabel = cell.subviews[1] as! UILabel
 		cellLabel.textColor = UIColor.white
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
 						didDeselectItemAt indexPath: IndexPath) {
-		let cell = collectionView.cellForItem(at: indexPath)
-		cell?.backgroundColor = UIColor.clear
-		let cellLabel = cell?.subviews[1] as! UILabel
+		
+		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
+			else { return }
+		cell.backgroundColor = UIColor.clear
+		let cellLabel = cell.subviews[1] as! UILabel
 		cellLabel.textColor = Style.activeCellLabelColor
 	}
 	
