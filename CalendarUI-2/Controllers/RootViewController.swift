@@ -54,7 +54,7 @@ class RootViewController: UIViewController {
 		let rightBarButton = UIBarButtonItem(title: "Light",
 											style: .plain,
 											target: self,
-											action: #selector(rightBarButtonAction))
+											action: #selector(rightBarButtonChangeLightTheme))
 		self.navigationItem.rightBarButtonItem = rightBarButton
 	}
 	
@@ -65,7 +65,7 @@ class RootViewController: UIViewController {
 	}
 	
 	
-	@objc func rightBarButtonAction(sender: UIBarButtonItem) {
+	@objc func rightBarButtonChangeLightTheme(sender: UIBarButtonItem) {
 		if theme == .dark {
 			sender.title = "Dark"
 			theme = .light

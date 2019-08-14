@@ -159,6 +159,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 	
 	
 	// MARK: - Delegate and Data Source methods
+	
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
 		return numOfDaysInMonth[currentMonthIndex - 1] + firstDayOfMonth - 1
@@ -182,10 +183,11 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 				cell.dateLabel.textColor = UIColor.lightGray
 			} else {
 				cell.isUserInteractionEnabled = true
-				cell.dateLabel.textColor = Style.activeCellLabelColor
+				cell.dateLabel.textColor = Style.deselecttedCellLabelTextColor
 				/* The following if-statemet fixes the bug of a selected cell not having the correct background color after scrolling. */
 				if cell.isSelected {
-					cell.backgroundColor = Colors.nightSky
+					cell.backgroundColor = Style.selectedCellBackgroundColor
+					cell.dateLabel.textColor = Style.selectedCellLabelTextColor
 				}
 			}
 		}
@@ -204,6 +206,8 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 			guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 				else { return false }
 			cell.backgroundColor = UIColor.clear
+			let cellLabel = cell.subviews[1] as! UILabel
+/**/			cellLabel.textColor = Style.deselecttedCellLabelTextColor
 		} else {
 			return true
 		}
@@ -215,9 +219,9 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 						didSelectItemAt indexPath: IndexPath) {
 		guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell
 			else { return }
-		cell.backgroundColor = Colors.nightSky
+		cell.backgroundColor = Style.selectedCellBackgroundColor
 		let cellLabel = cell.subviews[1] as! UILabel
-		cellLabel.textColor = UIColor.white
+		cellLabel.textColor = Style.selectedCellLabelTextColor
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
@@ -227,7 +231,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
 			else { return }
 		cell.backgroundColor = UIColor.clear
 		let cellLabel = cell.subviews[1] as! UILabel
-		cellLabel.textColor = Style.activeCellLabelColor
+/**/		cellLabel.textColor = Style.deselecttedCellLabelTextColor
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,

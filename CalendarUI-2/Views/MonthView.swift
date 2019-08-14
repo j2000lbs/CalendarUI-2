@@ -233,7 +233,7 @@ class MonthView: UIView {
 //				cell.dateCell.textColor = UIColor.lightGray
 //			} else {
 //				cell.isUserInteractionEnabled = true
-//				cell.dateCell.textColor = Style.activeCellLabelColor
+//				cell.dateCell.textColor = Style.activeCellLabelTextColor
 //			}
 //		}
 //		return cell

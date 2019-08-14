@@ -15,23 +15,11 @@ class CalendarViewCell: UICollectionViewCell {
 		label.text = "00"
 		label.textAlignment = .center
 		label.font = UIFont.systemFont(ofSize: 16)
-		label.textColor = Colors.nightSky
+		label.textColor = Style.deselecttedCellLabelTextColor
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
 	
-	/* The following override variable fixes the bug of a selected cell not having the correct background color after scrolling.
-		This version had a delay when scrolling cell back onto the sceen.  A slight delay, but at times when changing phone orientation to landscape, the selceted view did not show without scrolling back and forth once.
-	override var isSelected: Bool {
-		didSet {
-			if self.isSelected {
-				self.backgroundColor = Colors.nightSky
-			} else {
-				self.backgroundColor = UIColor.clear
-			}
-		}
-	}
-*/
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)

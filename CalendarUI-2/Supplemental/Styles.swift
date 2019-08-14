@@ -14,8 +14,9 @@ struct Style {
 	static var monthViewLabelColor = UIColor.white
 	static var nextMonthButtonColor = UIColor.white
 	static var previousMonthButtonColor = UIColor.white
-	static var activeCellLabelColor = UIColor.white
-	static var activeCellLabelColorHighlighted = UIColor.black
+	static var deselecttedCellLabelTextColor = UIColor.clear			// was .white
+	static var selectedCellLabelTextColor = UIColor.white
+	static var selectedCellBackgroundColor = Colors.nightSky			// was .black
 	static var dayNameLabelColor = UIColor.white
 	
 	static func darkTheme() {
@@ -23,8 +24,9 @@ struct Style {
 		monthViewLabelColor = UIColor.white
 		nextMonthButtonColor = UIColor.white
 		previousMonthButtonColor = UIColor.white
-		activeCellLabelColor = UIColor.white
-		activeCellLabelColorHighlighted = Colors.red
+		deselecttedCellLabelTextColor = UIColor.white
+		selectedCellLabelTextColor = UIColor.white
+		selectedCellBackgroundColor = Colors.nightSky  // used ot be UIColor.black
 		dayNameLabelColor = UIColor.white
 	}
 	
@@ -33,8 +35,9 @@ struct Style {
 		monthViewLabelColor = UIColor.black
 		nextMonthButtonColor = UIColor.black
 		previousMonthButtonColor = UIColor.black
-		activeCellLabelColor = UIColor.black
-		activeCellLabelColorHighlighted = Colors.red
+		deselecttedCellLabelTextColor = UIColor.black
+		selectedCellLabelTextColor = UIColor.white
+		selectedCellBackgroundColor = Colors.nightSky		// was .white
 		dayNameLabelColor = UIColor.black
 	}
 }
